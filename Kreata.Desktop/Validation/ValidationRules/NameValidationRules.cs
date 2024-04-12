@@ -49,6 +49,12 @@ namespace Kreta.Desktop.Validation.ValidationRules
             string.IsNullOrEmpty(_nameToValidate) ? false : 
                 _nameToValidate.First() == '-' || _nameToValidate.EndsWith("-") ? false : 
                     _nameToValidate.Contains("-") ? true : false;
-
+        public bool IsTheFirstLetterCapital => false;
+        public bool IsOnlyLetterOrSpace => false;
+        public bool IsLowerCaseAfterCapitalLetter => false;
+        public bool IsAfterDashOneCapitalAndOneLowerCaseLetter => false;
+        public bool IsAfterSpcaeOneCapitalAndOneLowerCaseLetter => false;
+        public bool IsOnlyOneSpaceInName => false;
+        public bool IsOnlyOneSpaceOrDashInName => false;
     }
 }
