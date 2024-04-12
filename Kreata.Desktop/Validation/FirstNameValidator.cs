@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 namespace Kreta.Desktop.Validation
 {
-    public class NameValidator : ValidationRule
+    public class FirstNameValidator : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
@@ -13,7 +13,7 @@ namespace Kreta.Desktop.Validation
                 string nameToValidate = (string)value;
                 NameValidationRules nvr = new NameValidationRules(nameToValidate);
                 if (nvr.IsNameShort)
-                    return new ValidationResult(false, "A név túl rövid!");
+                    return new ValidationResult(false, "A keresztnév túl rövid!");
 
             }
             return new ValidationResult(true, "");

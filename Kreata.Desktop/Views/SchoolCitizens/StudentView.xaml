@@ -57,16 +57,25 @@
                      />
         </StackPanel>
         <TextBox Grid.Row="1" Grid.Column="1" Margin="2 2 2 2" Padding="0 2"
-                 Validation.ErrorTemplate="{StaticResource ValidationTemplate2}">
+                 Validation.ErrorTemplate="{StaticResource ValidationTemplate3}">
             <TextBox.Text>
                 <Binding Path="SelectedStudent.LastName" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
-                        <validation:NameValidator/>
+                        <validation:LastNameValidator/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedStudent.FirstName}"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="2 2 2 2" Padding="0 2"
+                 Validation.ErrorTemplate="{StaticResource ValidationTemplate3}">
+            <TextBox.Text>
+                <Binding Path="SelectedStudent.FirstName" Mode="TwoWay" ValidatesOnDataErrors="True" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validation:FirstNameValidator/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <DatePicker Grid.Row="3" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedStudent.BirthDay}"></DatePicker>
         <xwpftk:IntegerUpDown Grid.Row="4" Grid.Column="1" Margin="2 2 100 2" Minimum="9" Maximum="14" Value="{Binding SelectedStudent.SchoolYear}"></xwpftk:IntegerUpDown>
         <StackPanel Grid.Row="5" Grid.Column="1">
