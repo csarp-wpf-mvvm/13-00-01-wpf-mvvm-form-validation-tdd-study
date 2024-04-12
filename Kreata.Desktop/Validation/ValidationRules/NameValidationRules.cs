@@ -18,7 +18,21 @@ namespace Kreta.Desktop.Validation.ValidationRules
         public bool IsOnlyLetterOrSpaceOrDash => false;
         public bool IsOnlyLetter => !string.IsNullOrEmpty(_nameToValidate) ? _nameToValidate.All(char.IsLetter) : false;
 
-        public bool IsThereSpaceInTheName => false;
+        public bool IsThereSpaceInTheName
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_nameToValidate))
+                    return false;
+                for (int i = 0; i < _nameToValidate.Length; i++)
+                {
+                    if (i != 0 && i != _nameToValidate.Length - 1)
+                        if (_nameToValidate[i] == ' ')
+                            return true;
+                }
+                return false;
+            }
+        }
         public bool IsThereDashInTheName => false;
 
     }
