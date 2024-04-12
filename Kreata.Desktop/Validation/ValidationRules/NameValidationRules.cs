@@ -22,7 +22,10 @@ namespace Kreta.Desktop.Validation.ValidationRules
             string.IsNullOrEmpty(_nameToValidate) ? false :
                 _nameToValidate.First() == ' ' || _nameToValidate.EndsWith(" ") ? false :
                     _nameToValidate.Contains(" ") ? true : false;
-        public bool IsThereDashInTheName => false;
+        public bool IsThereDashInTheName =>
+            string.IsNullOrEmpty(_nameToValidate) ? false : 
+                _nameToValidate.First() == '-' || _nameToValidate.EndsWith("-") ? false : 
+                    _nameToValidate.Contains("-") ? true : false;
 
     }
 }
