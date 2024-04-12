@@ -15,7 +15,9 @@ namespace Kreta.Desktop.Validation.ValidationRules
         }
 
         public bool IsNameShort => _nameToValidate.Length < 2;
-        public bool IsOnlyLetterOrSpaceOrDash => false;
+        //Acs-Sánt*
+        //Farkasné Sz8bó
+        public bool IsOnlyLetterOrSpaceOrDash => IsOnlyLetter || IsThereDashInTheName || IsThereSpaceInTheName;
         public bool IsOnlyLetter => !string.IsNullOrEmpty(_nameToValidate) ? _nameToValidate.All(char.IsLetter) : false;
 
         public bool IsThereSpaceInTheName => 
