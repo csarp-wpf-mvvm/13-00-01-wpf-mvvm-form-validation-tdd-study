@@ -14,6 +14,6 @@ namespace Kreta.Desktop.Validation.ValidationRules
             _nameToValidate = name;
         }
 
-        public bool IsNameShort => false;
+        public bool IsNameShort => _nameToValidate.Length < 2;
     }
 }
