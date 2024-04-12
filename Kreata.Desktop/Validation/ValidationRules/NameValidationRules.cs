@@ -21,7 +21,7 @@ namespace Kreta.Desktop.Validation.ValidationRules
         public bool IsThereSpaceInTheName => 
             string.IsNullOrEmpty(_nameToValidate) ? false :
                 _nameToValidate.First() == ' ' || _nameToValidate.EndsWith(" ") ? false :
-                    _nameToValidate.Any(char.IsWhiteSpace);
+                    _nameToValidate.Contains(" ") ? true : false;
         public bool IsThereDashInTheName => false;
 
     }
